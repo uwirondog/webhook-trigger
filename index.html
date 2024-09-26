@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trigger Google Search</title>
+    <title>Trigger SEvacon</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background-color: #f0f0f0; }
         h1 { color: #333; }
@@ -12,15 +12,15 @@
     </style>
 </head>
 <body>
-    <h1>Trigger Google Search</h1>
+    <h1>Trigger SEvacon</h1>
     <button onclick="triggerWebhook()" class="button">Activate</button>
     <script>
         function triggerWebhook() {
-            var webhookUrl = 'https://hooks.nabu.casa/gAAAAABm9Y9f4YWLw4HUxQcPKORQUBdqrv7UzDOGwvIv5HQcm-NaX16w_DYed4gLwo98KGkCGzYOQJj7CbfzevAsfyIxHWvBxfBafcvNHjwMUBv0ZriBq7DEl2fZbLLB94-hFk5ZVKX9zFDZq5wNUDT5bhW6Zadq_8-kvaCKuFSnMrY1GGA9Klc=';
+            var webhookUrl = 'https://hooks.nabu.casa/gAAAAABm9ZSoiAA76GiTNVTj3o3zsGSOiyfDz3sdLF77pS6MGAkw5RvBUrt1aA_5jQuwyEggg7CPD5Q021amn0eYg3LvvN5txAuEo8hv0iI3BKSJ8k76MykE8pZSgftvahJUCrhDxBmM_iY-aIxOCjD-LbhxvGYLJzthI5RcEp0zhzKMDcOaSVI=';
             var win = window.open(webhookUrl, '_blank');
             setTimeout(function() {
                 win.close();
-                alert('Action triggered. Check Home Assistant for results.');
+                alert('SEvacon triggered. Check Home Assistant for results.');
             }, 1000);
         }
     </script>
