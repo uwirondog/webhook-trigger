@@ -24,7 +24,7 @@
                 mode: 'no-cors'
             })
             .then(response => {
-                document.getElementById('status').innerText = 'SEvacon triggered. Check Home Assistant for results.';
+                document.getElementById('status').innerText = 'SE Vacuum activated. It will run for 4 minutes.';
             })
             .catch(error => {
                 document.getElementById('status').innerText = 'Error: ' + error.message;
