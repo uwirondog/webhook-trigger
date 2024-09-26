@@ -16,19 +16,12 @@
     <button onclick="triggerWebhook()" class="button">Activate</button>
     <script>
         function triggerWebhook() {
-            fetch('https://hooks.nabu.casa/gAAAAABm9Y9f4YWLw4HUxQcPKORQUBdqrv7UzDOGwvIv5HQcm-NaX16w_DYed4gLwo98KGkCGzYOQJj7CbfzevAsfyIxHWvBxfBafcvNHjwMUBv0ZriBq7DEl2fZbLLB94-hFk5ZVKX9zFDZq5wNUDT5bhW6Zadq_8-kvaCKuFSnMrY1GGA9Klc=', {
-                method: 'POST',
-            })
-            .then(response => {
-                if(response.ok) {
-                    alert('Action triggered successfully!');
-                } else {
-                    alert('Error triggering action. Please try again.');
-                }
-            })
-            .catch(error => {
-                alert('Error: ' + error);
-            });
+            var webhookUrl = 'https://hooks.nabu.casa/gAAAAABm9Y9f4YWLw4HUxQcPKORQUBdqrv7UzDOGwvIv5HQcm-NaX16w_DYed4gLwo98KGkCGzYOQJj7CbfzevAsfyIxHWvBxfBafcvNHjwMUBv0ZriBq7DEl2fZbLLB94-hFk5ZVKX9zFDZq5wNUDT5bhW6Zadq_8-kvaCKuFSnMrY1GGA9Klc=';
+            var win = window.open(webhookUrl, '_blank');
+            setTimeout(function() {
+                win.close();
+                alert('Action triggered. Check Home Assistant for results.');
+            }, 1000);
         }
     </script>
 </body>
