@@ -9,23 +9,25 @@
         h1 { color: #333; }
         .button { display: inline-block; font-size: 18px; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; cursor: pointer; }
         .button:hover { background-color: #45a049; }
+        #status { margin-top: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
     <h1>Trigger SEvacon</h1>
     <button onclick="triggerWebhook()" class="button">Activate</button>
+    <div id="status"></div>
     <script>
         function triggerWebhook() {
             var webhookUrl = 'https://hooks.nabu.casa/gAAAAABm9ZSoiAA76GiTNVTj3o3zsGSOiyfDz3sdLF77pS6MGAkw5RvBUrt1aA_5jQuwyEggg7CPD5Q021amn0eYg3LvvN5txAuEo8hv0iI3BKSJ8k76MykE8pZSgftvahJUCrhDxBmM_iY-aIxOCjD-LbhxvGYLJzthI5RcEp0zhzKMDcOaSVI=';
             fetch(webhookUrl, {
-                method: 'PUT',
-                mode: 'no-cors' // This is important to avoid CORS issues
+                method: 'POST',
+                mode: 'no-cors'
             })
-            .then(() => {
-                alert('SEvacon triggered. Check Home Assistant for results.');
+            .then(response => {
+                document.getElementById('status').innerText = 'SEvacon triggered. Check Home Assistant for results.';
             })
             .catch(error => {
-                alert('Error: ' + error);
+                document.getElementById('status').innerText = 'Error: ' + error.message;
             });
         }
     </script>
