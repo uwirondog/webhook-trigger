@@ -17,11 +17,16 @@
     <script>
         function triggerWebhook() {
             var webhookUrl = 'https://hooks.nabu.casa/gAAAAABm9ZSoiAA76GiTNVTj3o3zsGSOiyfDz3sdLF77pS6MGAkw5RvBUrt1aA_5jQuwyEggg7CPD5Q021amn0eYg3LvvN5txAuEo8hv0iI3BKSJ8k76MykE8pZSgftvahJUCrhDxBmM_iY-aIxOCjD-LbhxvGYLJzthI5RcEp0zhzKMDcOaSVI=';
-            var win = window.open(webhookUrl, '_blank');
-            setTimeout(function() {
-                win.close();
+            fetch(webhookUrl, {
+                method: 'PUT',
+                mode: 'no-cors' // This is important to avoid CORS issues
+            })
+            .then(() => {
                 alert('SEvacon triggered. Check Home Assistant for results.');
-            }, 1000);
+            })
+            .catch(error => {
+                alert('Error: ' + error);
+            });
         }
     </script>
 </body>
